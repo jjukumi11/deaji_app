@@ -1,14 +1,11 @@
-# 대지고등학교 생활앱 서버
-## 로컬 실행
-```bash
-cp .env.sample .env   # JWT_SECRET 수정 권장
-npm install
-npm run init          # 샘플 데이터
-npm start             # http://localhost:8787
-```
-## 엔드포인트
-- POST /auth/register, /auth/login
-- GET /timetable/:classId, POST /timetable (교사)
-- GET /meals/:date, POST /meals (교사)
-- GET /assignments, POST /assignments, PATCH /assignments/:id/toggle, DELETE /assignments/:id
-- GET /news, POST /news (교사)
+# Daeji School Server (with DB Init)
+
+## 사용법
+1. Render에서 PostgreSQL 생성
+2. Render Web Service 생성 → Language: Node, Build Command: `npm install`, Start Command: `npm start`
+3. Environment Variables 설정:
+   - DATABASE_URL = (Render PostgreSQL External URL)
+4. 배포 후 브라우저에서 `/init` 접속 → DB 및 샘플 계정 자동 생성
+5. 테스트 로그인 계정:
+   - 이메일: student@daeji.hs.kr
+   - 비밀번호: student1234
